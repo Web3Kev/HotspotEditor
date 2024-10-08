@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hotspot Editor</title>
+    <link rel="stylesheet" href="./styles.css"> 
+</head>
+<body>
+    <div id="canvas-container">
+        <canvas id="imageCanvas"></canvas>
+        <canvas id="hotspotCanvas"></canvas>
+        <div id="message">Please load an image</div>
+        <div id="hotspot-tooltip" style="display: none;"></div>
+      </div>
+      
+      <div id="top-left-controls" class="control-group">
+        <label for="imageLoader" class="button">Upload Image</label>
+        <input type="file" id="imageLoader" accept="image/*">
+        <label for="jsonLoader" class="button">Upload Hotspots</label>
+        <input type="file" id="jsonLoader" accept="application/json">
+      </div>
+      
+      <div id="top-right-controls" class="control-group">
+        <button id="downloadHotspots">Download Hotspots</button>
+      </div>
+      
+      <div id="bottom-left-controls" class="control-group">
+        
+        
+        <div class="column">
+            <div class="row">
+                <input type="number" id="cellSize" min="1" max="100" value="10">
+            </div>
+            <div class="row">
+                <span id="cellsizespan">Cell Size</span>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+              <input type="range" id="opacity" min="0" max="1" step="0.1" value="0.5">
+              <!-- <label for="opacity">Opacity</label> -->
+            </div>
+            <div class="row">
+              <span id="opacityspan">Opacity</span>
+            </div>
+          </div>
+          <div class="column">
+            <div class="row">
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggleDebug">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="row">
+              <span id="debugspan">Debug OFF</span>
+            </div>
+          </div>
+          <div class="column">
+            <div class="row">
+              <label class="toggle-switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="row">
+              <span id="modespan">Create Mode</span>
+            </div>
+          </div>
+
+      </div>
+      
+      <div id="bottom-right-controls" class="control-group">
+        <div class="column">
+            <div class="row">
+              <input type="range" id="zoom" min="1" max="5" step="1" value="1">
+            </div>
+            <div class="row">
+              <span id="zoomspan">Zoom</span>
+            </div>
+        </div>
+        
+      </div>
+    
+      <div id="hotspot-name-dialog">
+        <input type="text" id="hotspot-name" placeholder="Enter hotspot name">
+        <input type="color" id="hotspot-color" value="#fd03f9">
+        <button id="save-hotspot">Save</button>
+        <button id="cancel-hotspot">Cancel</button>
+        <button id="delete-hotspot" style="display: none;">Delete</button>
+      </div>
+
+    </script>
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
