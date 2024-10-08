@@ -14,3 +14,6 @@ Mobile and Touch device ready.
 
 Zoom in or out with slider.
 Pan around with middle button or 2 fingers on mobile.
+<br><br>
+<a href="https://web3kev.github.io/HotspotEditor/">
+live demo</a>
